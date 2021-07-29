@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<select [(ngModel)]="filterCategory" (change)="filterMethod(filterCategory)">
+  <option value='' hidden>Category</option>
+  <option value="Premium"> Premium</option>
+  <option value="Tamilnadu">Tamilnadu</option>
+</select>
+<div class="row" style="padding: 20px;">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6" *ngFor="let obj of this.productsList" style="padding: 20px;">
+    <div class="card">
+      <img class="card-img-top" src={{obj.image}} alt="Card image cap" style="height: 300px;">
+      <div class="card-body">
+        <h5 class="card-title">{{obj.p_name}}</h5>
+        <p class="card-text">₹{{obj.p_cost}}</p>
+      </div>
+    </div>
+  </div>
+</div>
